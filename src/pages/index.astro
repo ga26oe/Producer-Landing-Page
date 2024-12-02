@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import TrackList from '../components/TrackList';
+import DynamicIsland from '../components/DynamicPlayer/DynamicPlayer'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -16,5 +17,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<TrackList client:load />
 
 		<Footer />
+
 	</body>
 </html>

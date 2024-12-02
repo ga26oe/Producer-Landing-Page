@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MusicPlayer from "../components/DynamicPlayer/DynamicPlayer";
 
 interface Track {
   id: number;
@@ -150,6 +151,10 @@ const TrackList = () => {
               </div>
             </div>
           ))}
+
+          <div>
+            <MusicPlayer />
+          </div>
         </div>
       </div>
     </div>
