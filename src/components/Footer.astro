@@ -1,41 +1,12 @@
 ---
-import { Image } from 'astro:assets';
+import AboutMe from "./AboutMe.astro";
 
-import AboutImage from '../images/aboutme.jpg';
 const today = new Date();
 ---
 
 <footer>
 	<div class="container">
-    <div class="about-section">
-        <div class="about-image-container">
-            <Image 
-                src={AboutImage} 
-                alt="About Kenny Taylor" 
-                width={240} 
-                height={240} 
-                class="about-image"
-            />
-            <div class="hover-overlay">
-                <span>About Me</span>
-            </div>
-        </div>
-        
-        <div class="about-content">
-            <h2>About Kenny Taylor</h2>
-            <p class="bio">Kenny Taylor is a composer and producer known for creating immersive musical experiences. With a background in orchestral and electronic music, he brings a unique blend of classical training and modern production techniques to his work.</p>
-            
-            <div class="social-links">
-                <a href="https://m.webtoo.ls/@astro" target="_blank">
-                    <span class="sr-only">Follow on Mastodon</span>
-                    <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
-                        <path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189z"/>
-                    </svg>
-                </a>
-                <!-- Add other social links similarly -->
-            </div>
-        </div>
-    </div>
+        <AboutMe
 	</div>
 
     <div class="copyright">
@@ -48,108 +19,16 @@ const today = new Date();
         padding: 4em 2em;
         background-color: #1a1a1a;
         color: #fff;
+        display: flex;
     }
 
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 0 2em;
+        justify-content: flex-start;
 
 	}
-
-    .about-section {
-        display: flex;
-        gap: 2em;
-		margin-left: 2em;    
-	}
-
-    .about-image-container {
-        position: relative;
-        width: 400px;
-        height: 400px;
-        flex-shrink: 0;
-        cursor: pointer;
-		align-items: flex-start;
-    }
-
-    .about-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-        transition: transform 0.3s ease;
-    }
-
-    .hover-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        border-radius: 8px;
-    }
-
-    .about-image-container:hover .hover-overlay {
-        opacity: 1;
-    }
-
-    .about-image-container:hover .about-image {
-        transform: scale(1.05);
-    }
-
-    .about-content {
-        flex: 1;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity 0.3s ease, height 0.3s ease;
-    }
-
-    .about-content.visible {
-        opacity: 1;
-        height: auto;
-    }
-
-    h2 {
-        font-size: 2em;
-        margin-bottom: 1em;
-		color: rgba(255, 255, 255, 0.7);
-    }
-
-    .bio {
-        font-size: 1.1em;
-        line-height: 1.6;
-        margin-bottom: 2em;
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    .social-links {
-        display: flex;
-        gap: 1em;
-    }
-
-    .social-links a {
-        color: rgba(255, 255, 255, 0.6);
-        transition: color 0.3s ease;
-    }
-
-    .social-links a:hover {
-        color: #fff;
-    }
-
-    .copyright {
-        text-align: center;
-        margin-top: 4em;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.9em;
-    }
-
     @media (max-width: 768px) {
         .about-section {
             flex-direction: column;
